@@ -1,0 +1,16 @@
+#%RAML 1.0 DataType
+type: object
+properties:
+  customerId: string
+  prefix?: string
+  firstName: string
+  lastName: string
+  suffix?: string
+  displayName: string
+  address: string
+  phoneNumber: Address
+  email: string
+  ssn: string
+  dateOfBirth: date-only
+example: !include../examples/CustomerExample.raml
+    

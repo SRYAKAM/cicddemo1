@@ -1,0 +1,72 @@
+#%RAML 1.0
+title: Shravan Banking API
+mediaType: application/json
+
+resourceTypes:
+  collection(parent): !include ResourceTypes/collection.raml
+  member(child): !include ResourceTypes/member.raml
+  subMember: !include ResourceTypes/subMember.raml
+
+types:
+  customerErrorMessage: !include CustomDataTypes/errorStatusMessage.raml
+  Account: !include CustomDataTypes/Account.raml
+  AccountOwner: !include CustomDataTypes/AccountOwner.raml
+  Address: !include CustomDataTypes/Address.raml
+  Bank: !include CustomDataTypes/Bank.raml
+  Money: !include CustomDataTypes/Money.raml
+  Transaction: !include CustomDataTypes/customer.raml
+  Customer: !include CustomDataTypes/customer.raml
+  
+/customers:
+  type:
+    collection(parent)    
+  get:           
+  post:   
+
+  /{customer_id}:
+    type:
+      member(child)
+    get:
+    patch:             
+    delete:       
+            
+    /accounts:
+      type:
+        subMember
+      get:
+           
+              
+/accounts:
+  type:
+    collection(parent)
+  post:   
+                                  
+  /{account_id}:
+    type:
+      member(child)
+    get:
+            
+            
+    put:
+      
+                    
+    delete:
+      
+            
+    /transactions:
+      type:
+        subMember
+      get:
+           
+              
+/transactions:
+  type:
+    collection(parent)
+  post:
+    
+
+  /{transaction_id}:
+    type:
+      member(child)
+    get:
+      
